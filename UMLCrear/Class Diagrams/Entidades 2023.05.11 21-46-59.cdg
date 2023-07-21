@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Entidades">
+  <ClassDiagramComponents>
+    <Class name="baraja" package="Entidades" visibility="public" xPosition="72.0" yPosition="33.0">
+      <Fields>
+        <Field name="baraja" type="ArrayList&lt;carta&gt;" visibility="private"/>
+        <Field name="desbaraja" type="ArrayList&lt;carta&gt;" visibility="private"/>
+        <Field name="leer" type="Scanner" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="ArrayList&lt;carta&gt;" name="baraja"/>
+          <Argument type="ArrayList&lt;carta&gt;" name="desbaraja"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getBaraja" returnType="ArrayList&lt;carta&gt;" visibility="public"/>
+        <Method name="setBaraja" returnType="void" visibility="public">
+          <Argument type="ArrayList&lt;carta&gt;" name="baraja"/>
+        </Method>
+        <Method name="getDesbaraja" returnType="ArrayList&lt;carta&gt;" visibility="public"/>
+        <Method name="setDesbaraja" returnType="void" visibility="public">
+          <Argument type="ArrayList&lt;carta&gt;" name="desbaraja"/>
+        </Method>
+        <Method name="getLeer" returnType="Scanner" visibility="public"/>
+        <Method name="setLeer" returnType="void" visibility="public">
+          <Argument type="Scanner" name="leer"/>
+        </Method>
+        <Method name="llenarBaraja" returnType="void" visibility="public"/>
+        <Method name="barajar" returnType="void" visibility="public"/>
+        <Method name="siguienteCarta" returnType="void" visibility="public"/>
+        <Method name="cartasDisponibles" returnType="void" visibility="public"/>
+        <Method name="darCartas" returnType="void" visibility="public"/>
+        <Method name="cartasMonton" returnType="void" visibility="public"/>
+        <Method name="mostrarBaraja" returnType="void" visibility="public"/>
+        <Method name="menu" returnType="void" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="carta" package="Entidades" visibility="public" xPosition="532.0" yPosition="124.0">
+      <Fields>
+        <Field name="numero" type="int" visibility="private"/>
+        <Field name="PaloCarta" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="numero"/>
+          <Argument type="String" name="PaloCarta"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNumero" returnType="int" visibility="public"/>
+        <Method name="setNumero" returnType="void" visibility="public">
+          <Argument type="int" name="numero"/>
+        </Method>
+        <Method name="getPaloCarta" returnType="String" visibility="public"/>
+        <Method name="setPaloCarta" returnType="void" visibility="public">
+          <Argument type="String" name="PaloCarta"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="desbaraja" source="Entidades.baraja" target="Entidades.carta" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;carta&gt;"/>
+    <HasRelation name="baraja" source="Entidades.baraja" target="Entidades.carta" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;carta&gt;"/>
+    <UseRelation source="Entidades.baraja" target="Entidades.carta" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
